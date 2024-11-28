@@ -6,7 +6,7 @@
 
 
 main{
-    background-image: url(../Assets/img/imgexemplo.jpg);
+    background-image: url(../img/imgexemplo.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: right center;
