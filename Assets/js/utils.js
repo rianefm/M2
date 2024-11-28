@@ -1,0 +1,1 @@
+// usando indexedDB bd local
