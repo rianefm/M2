@@ -25,6 +25,28 @@ export class Database {
         });
         userStore.createIndex("email", "email", { unique: true });
       }
-   }
-  }
+
+      if (!db.objectStoreNames.contains(this.storeNames.products)) {
+        db.createObjectStore(this.storeNames.products, {
+          keyPath: 'id',
+          autoIncrement: true
+        });
+      }
+
+      if (!db.objectStoreNames.contains(this.storeNames.orders)) {
+        db.createObjectStore(this.storeNames.orders, {
+          keyPath: 'id',
+          autoIncrement: true
+        });
+      }
+    }
+    request.onsucess = (event) => {
+      this.db = event.target.result;
+      console.log('Banco de dados inicializado com sucesso', this.dbName);
+    };
+
+    request.onerror = (event) => {
+      console.error('Erro ao inicializar o banco de dados', event.target.error);
+    };
+  };
 }
