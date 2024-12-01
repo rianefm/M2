@@ -30,3 +30,31 @@ async function loadUserOrders() {
     ordersList.appendChild(orderDiv);
   });
 }
+
+// Atualizar informações do usuário (Perfil)
+async function updateUserProfile() {
+  const name = document.getElementById('name').value;
+  const password = document.getElementById('password').value;
+
+  const user = await db.getItemByKey("users", parseInt(userID));
+  if (!user) {
+    user.name = name || user.name;
+    if (password) {
+      user.passwordHash = hashPassword(password); // Função de hash de senha não implementada
+    }
+    await db.updateItem("users", user);
+    const dialog = document.createElement('dialog');
+    dialog.textContent = 'Perfil atualizado com sucesso!';
+    document.body.appendChild(dialog);
+    dialog.showModal();
+    setTimeout(() => {
+      dialog.close();
+      document.body.removeChild(dialog);
+    }, 3000);
+  }
+}
+
+document.getElementById('update-profile').addEventListener('click', updateUserProfile);
+
+loadUserProfile();
+loadUserOrders();
