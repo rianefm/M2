@@ -86,4 +86,60 @@ export class Database {
       };
     });
   }
+
+  getItemByKey(storeName, key) {
+    return new Promise((resolve, reject) => {
+      const transaction = this.db.transaction(storeName, "readonly");
+      const store = transaction.objectStore(storeName);
+
+      const request = store.get(key);
+
+      request.onsuccess = () => {
+        resolve(request.result); // Retorna o item encontrado
+      };
+
+      request.onerror = () => {
+        console.error(`Erro ao obter item na tabela ${storeName} com chave ${key}:`, request.error);
+        reject(request.error);
+      };
+    });
+  }
+
+  updateItem(storeName, data) {
+    return new Promise((resolve, reject) => {
+      const transaction = this.db.transaction(storeName, "readwrite");
+      const store = transaction.objectStore(storeName);
+
+      const request = store.put(data);
+
+      request.onsuccess = () => {
+        console.log(`Item atualizado na tabela ${storeName}:`, data);
+        resolve(request.result); // Retorna o ID do item atualizado
+      };
+
+      request.onerror = () => {
+        console.error(`Erro ao atualizar item na tabela ${storeName}:`, request.error);
+        reject(request.error);
+      };
+    });
+  }
+
+  deleteItem(storeName, key) {
+    return new Promise((resolve, reject) => {
+      const transaction = this.db.transaction(storeName, "readwrite");
+      const store = transaction.objectStore(storeName);
+
+      const request = store.delete(key);
+
+      request.onsuccess = () => {
+        console.log(`Item removido da tabela ${storeName} com chave ${key}`);
+        resolve(request.result); // Retorna o ID do item removido
+      };
+
+      request.onerror = () => {
+        console.error(`Erro ao remover item na tabela ${storeName}:`, request.error);
+        reject(request.error);
+      };
+    });
+  }
 }
