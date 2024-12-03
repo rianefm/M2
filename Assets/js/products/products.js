@@ -14,7 +14,7 @@ export class Products {
       name,
       price,
       description
-    }
+    } 
   return await this.db.addItem(this.storeName, product)
   }
 
