@@ -1,28 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="../Assets/css/login.css">
+
 </head>
 <body>
-    <div class="logo">
-        <img src="" alt=""> <!--adicionar a logo-->
-    </div>
-    <div class="loginContainer">
-        <h2>LOGIN</h2>
-        <form class="loginForm">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="Digite seu email" required>
-          <label for="password" id="labelPassword">Senha</label>
-          <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
-          <button type="submit" id="loginButton">ENTRAR</button>
 
-          <div class="actions">
-            <button id="forgotPassword">Esqueci a senha</button>
-            <button id="registerButton">Cadastre-se</button>
-          </div>
+    <div class="container">
+        <form action="/login" method="post">
+            <h1>HackFood</h1>
+
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+
+            <label for="password">Senha</label>
+            <input type="password" id="password" name="senha" placeholder="Digite sua senha" required>
+
+            <button type="submit">Entrar</button>
         </form>
+
+        <div class="forgot-password">
+            <a href="/forgot-password">Esqueci a senha</a>
+        </div>
+
+        <div class="switch">
+            Não tem uma conta? <a href="register.html">Cadastre-se</a>
+        </div>
+    </div>
+
 </body>
 </html>
