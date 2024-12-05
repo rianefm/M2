@@ -52,4 +52,5 @@ export class Products {
         return await this.db.deleteItem(this.storeName, id);
     }
 }
-    export const products = new Products();
+
+export const products = new Products();
