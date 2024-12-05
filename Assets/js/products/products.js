@@ -5,7 +5,22 @@ export class Products {
         this.db = new Database();
         this.storeName = this.db.storeNames.products;
     }
+    constructor() {
+        this.db = new Database();
+        this.storeName = this.db.storeNames.products;
+    }
 
+    async addProduct(name, price, description = "") {
+        if (!name || price === undefined || price < 0) {
+            throw new Error('Nome e preço são obrigatórios, e o preço deve ser maior ou igual a 0');
+        }
+        const product = {
+            name,
+            price,
+            description
+        }
+        return await this.db.addItem(this.storeName, product)
+    }
     async addProduct(name, price, description = "") {
         if (!name || price === undefined || price < 0) {
             throw new Error('Nome e preço são obrigatórios, e o preço deve ser maior ou igual a 0');
@@ -21,7 +36,16 @@ export class Products {
     async getAllProducts() {
         return await this.db.getAllItems(this.storeName)
     }
+    async getAllProducts() {
+        return await this.db.getAllItems(this.storeName)
+    }
 
+    async getProductById(id) {
+        if (!id) {
+            throw new Error('Id é obrigatório para buscar um produto.');
+        }
+        return await this.db.getItemByKey(this.storeName, id)
+    }
     async getProductById(id) {
         if (!id) {
             throw new Error('Id é obrigatório para buscar um produto.');
