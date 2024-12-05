@@ -5,15 +5,6 @@ export class Products {
         this.db = new Database();
         this.storeName = this.db.storeNames.products;
     }
-<<<<<<< HEAD
-    const product = {
-      name,
-      price,
-      description
-    } 
-  return await this.db.addItem(this.storeName, product)
-  }
-=======
 
     async addProduct(name, price, description = "") {
         if (!name || price === undefined || price < 0) {
@@ -26,7 +17,6 @@ export class Products {
         }
         return await this.db.addItem(this.storeName, product)
     }
->>>>>>> 0b26ff42c63bdd10e45dca77e6ed0fd468b9850a
 
     async getAllProducts() {
         return await this.db.getAllItems(this.storeName)
@@ -63,7 +53,6 @@ export class Products {
     }
 }   
     export const products = new Products();
-
     
     /**
     //  * Remove um produto do banco de dados.
