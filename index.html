@@ -19,7 +19,7 @@
                 <img src="./Assets/img/hackthon.jpg" width="100px" alt="Logo HackFood">
             </div>
             <nav>
-                <ul class="menu">
+                <ul class="Menu">
                     <li><a href="#sobre">Sobre</a></li>
                     <li><a href="#projetos">Projetos</a></li>
                     <li><a href="#doacoes">Doações</a></li>
@@ -27,7 +27,7 @@
                     <li><a href="#contatos">Contato</a></li>
                 </ul>
             </nav>
-            <a href="./Pages/login.html" class="login-btn">Login</a>
+            <button class="button-home"><a href="./Pages/login.html">Login</a>&#8594;</button>
         </div>
     </header>
 
@@ -38,18 +38,25 @@
             <p>Um levantamento da ONU mostra que o Brasil desperdiça por ano cerca de 27 milhões de toneladas de
                 alimentos. Estima-se que 60% desse desperdício ocorre no manuseio, transporte e centros de
                 abastecimento.</p>
-            <a href="#sobre" class="btn-saiba-mais">Saiba Mais</a>
-        </div>
+               <!----<img src="./Assets/img/fotohome.jpg" alt="Foto de alimentos"> Não conseguir colocar no background-image-->
+            </div>
+           
+            <button class="btn-saiba">Saiba Mais</button> <!--<a href="#sobre"></a>!  COLOCAR O LINK AO LADO, NÃO CONSEGUI COLOCAR-->
     </section>
+            
+           <!---- <div class="btncao"><a href="#sobre">Saiba Mais</a></div>-->
+           
+            </section>
+           
+   
 
     <!-- Sobre Nós -->
     <section id="sobre">
         <div class="container">
             <div class="sobre-texto">
-                <h2>Sobre Nós</h2>
+                <h2 id="yellow">Sobre Nós</h2>
                 <p>O HackFood nasceu em 2023 com o objetivo de combater o desperdício de alimentos no Brasil e conectar
                     pessoas a projetos que buscam reduzir esse problema global. Transformamos dados em soluções!</p>
-                <a href="#projetos" class="btn-conheca">Conheça nossos projetos</a>
             </div>
             <div class="sobre-imagem">
                 <img src="https://placehold.co/400x200" alt="Imagem sobre o desperdício de alimentos" title="Imagem sobre o desperdício de alimentos">
@@ -60,15 +67,16 @@
     <!-- Projetos -->
     <section id="projetos">
         <div class="container">
-            <h2>Projetos</h2>
+            <h2 id="white">Projetos</h2>
+            <!-- <a href="#projetos" class="projetos">Conheça nossos projetos</a> -->
             <div class="projetos-carousel">
                 <button class="carousel-prev">&lt;</button>
-                <div class="projetos-itens">
-                    <div class="projeto-item">Projeto 1</div>
-                    <div class="projeto-item">Projeto 2</div>
-                    <div class="projeto-item">Projeto 3</div>
-                    <div class="projeto-item">Projeto 4</div>
-                </div>
+                 <div class="projetos-itens">
+                    <div class="projeto-item"></div>
+                    <div class="projeto-item"></div>
+                    <div class="projeto-item"></div>
+                    <div class="projeto-item"></div>
+                </div> 
                 <button class="carousel-next">&gt;</button>
             </div>
         </div>
@@ -76,27 +84,26 @@
 
     <!-- Doações -->
     <section id="doacoes">
-        <div class="container">
+        <h2 id="yellow">Doações</h2>
+        <p class="text-doacoes">Contribua para o combate ao desperdício de alimentos! Sua doação faz a diferença!</p>
             <div class="doacoes-texto">
-                <h2>Doações</h2>
-                <p>Contribua para o combate ao desperdício de alimentos! Sua doação faz a diferença!</p>
                 <div class="ranking">
-                    <p>Total de Doações:</p>
-                    <div class="ranking-dados"> <!-- manipular com js -->
-                        <span>R$ 23.800</span>
-                        <span>1.003 beneficiados</span>
-                        <span>800 doadores</span>
+                    <p>TOTAL DE DOAÇÕES:</p>
+                    <div class="BS"> <!-- manipular com js -->
+                        <span class="text-white">RECEBIDOS: 5,369 KG</span>
+                        <span class="text-white">BENEFICIADOS: 1,000</span>
+                        <span class="text-white">DOADORES: 500</span>
                     </div>
-                    <a href="#ranking" class="btn-ranking">Acesse o ranking</a>
+                    <button id="ranking-btn"><a href="#ranking" class="btn-ranking">Acesse o ranking</a></button>
                 </div>
             </div>
             <div class="doacoes-form">
-                <h3>Faça sua doação aqui!</h3>
+                <h3 class="form-green">Faça sua doação aqui!</h3>
                 <form>
                     <input type="text" placeholder="Nome completo" required>
                     <input type="email" placeholder="E-mail" required>
                     <input type="number" placeholder="Valor da Doação (R$)" required>
-                    <button type="submit" class="btn-doar">Fazer Doação</button>
+                    <button type="submit" class="btn-doar">FAZER DOAÇÃO</button>
                 </form>
             </div>
         </div>
@@ -105,29 +112,33 @@
     <!-- Conheça Nosso Time -->
     <section id="time">
         <div class="container">
-            <h2>Conheça Nosso Time</h2>
+            <h2  id="white">CONHEÇA NOSSO TIME</h2>
             <div class="time-membros">
-                <div class="membro">Membro 1</div>
-                <div class="membro">Membro 2</div>
-                <div class="membro">Membro 3</div>
-                <div class="membro">Membro 4</div>
-                <div class="membro">Membro 5</div>
+                <div class="A"></div>
+                <div class="B"></div>
+                <div class="C"></div>
+                <div class="D"></div>
+                <div class="E"></div>
             </div>
         </div>
     </section>
 
     <!-- Contatos -->
     <section id="contatos">
-        <div class="container">
+        <!--<div class="container">-->
             <div class="contato-info">
-                <h2>Contatos</h2>
-                <p>E-mail: test@gmail.com</p>
-                <p>Telefone: (XX) XXXXX-XXXX</p>
-                <a href="#voluntarios" class="btn-voluntarios">Junte-se a nós!</a>
+                <h2 id="yellow">Contatos</h2>
+                <p class="Info">E-mail: HackFood@gmail.com</p>
+                <p>Telefone: (11) 6666-0000</p>
+                </div>
+                <div class="volunteer">
+               <h3>Junte-se a nós!</h3>
+                <p>Faça parte desta iniciativa para transformar o desperdício de alimentos. Conecte-se conosco e contribua para um futuro mais sustentável</p>
+                <button class="button" ><a href="">QUERO PATROCINAR</a></button>
             </div>
-            <div class="contato-mapa">
-                <h3>Localização</h3>
-                <div class="mapa-placeholder">Mapa</div>
+
+            <div class="Mapa">
+                <h3>Localização  no  Mapa</h3>
             </div>
         </div>
     </section>
