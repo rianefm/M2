@@ -1,14 +1,10 @@
-import { Database } from "../database";
+import { Database } from "../database.js";
 
 export class Products {
     constructor() {
         this.db = new Database();
         this.storeName = this.db.storeNames.products;
     }
-    constructor() {
-        this.db = new Database();
-        this.storeName = this.db.storeNames.products;
-    }
 
     async addProduct(name, price, description = "") {
         if (!name || price === undefined || price < 0) {
@@ -18,39 +14,19 @@ export class Products {
             name,
             price,
             description
-        }
-        return await this.db.addItem(this.storeName, product)
-    }
-    async addProduct(name, price, description = "") {
-        if (!name || price === undefined || price < 0) {
-            throw new Error('Nome e preço são obrigatórios, e o preço deve ser maior ou igual a 0');
-        }
-        const product = {
-            name,
-            price,
-            description
-        }
-        return await this.db.addItem(this.storeName, product)
+        };
+        return await this.db.addItem(this.storeName, product);
     }
 
     async getAllProducts() {
-        return await this.db.getAllItems(this.storeName)
-    }
-    async getAllProducts() {
-        return await this.db.getAllItems(this.storeName)
+        return await this.db.getAllItems(this.storeName);
     }
 
     async getProductById(id) {
         if (!id) {
             throw new Error('Id é obrigatório para buscar um produto.');
         }
-        return await this.db.getItemByKey(this.storeName, id)
-    }
-    async getProductById(id) {
-        if (!id) {
-            throw new Error('Id é obrigatório para buscar um produto.');
-        }
-        return await this.db.getItemByKey(this.storeName, id)
+        return await this.db.getItemByKey(this.storeName, id);
     }
 
     async updateProduct(id, updates) {
@@ -65,6 +41,7 @@ export class Products {
         const updatedProduct = { ...product, ...updates };
         return await this.db.updateItem(this.storeName, updatedProduct);
     }
+
     async deleteProduct(id) {
         if (!id) {
             throw new Error('Id é obrigatório para excluir um produto.');
@@ -75,17 +52,6 @@ export class Products {
         }
         return await this.db.deleteItem(this.storeName, id);
     }
-}   
-    export const products = new Products();
-    
-    /**
-    //  * Remove um produto do banco de dados.
-    //  * @param {number} id ID do produto a ser removido
-    //  * @returns {Promise} ID do produto removido
-     * 
-     deleteProduct(id) com validação de id
-    
-     product => this.getProductById(id); 
-    
-      return com db passando a função deleteItem passando o storeName e o id do produto
-     */
+}
+
+export const products = new Products();

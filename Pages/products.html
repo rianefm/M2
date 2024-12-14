@@ -31,41 +31,63 @@
           <span>Endereço da pessoa</span>
           <div class="icons">
             <i class="fa-solid fa-cart-shopping"></i>
-            <!-- Carrinho -->
             <i class="fa-solid fa-location-dot"></i>
-            <!-- Localização -->
             <i class="fa-solid fa-user"></i>
-            <!-- Usuário -->
             <i class="fa-solid fa-heart"></i>
           </div>
         </div>
       </div>
     </header>
 
-    <!-- Filtros -->
     <section id="filters">
       <div class="container">
         <div class="search-bar">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <input type="text" placeholder="Busque por alimentos" />
-          <button>Filtros</button>
+          <input type="text" placeholder="Buscar produtos..." />
         </div>
+        <button id="open-modal-btn" class="btn">Adicionar Produto</button>
       </div>
     </section>
 
+    <!-- Modal de cadastro de produtos -->
+    <div id="add-product-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Cadastrar Produto</h2>
+        <form id="add-product-form">
+          <label for="name">Nome do Produto</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Nome do Produto"
+            required
+          />
+
+          <label for="price">Preço</label>
+          <input
+            type="number"
+            name="price"
+            id="price"
+            placeholder="Preço"
+            required
+            step="0.01"
+          />
+
+          <label for="description">Descrição</label>
+          <textarea
+            name="description"
+            id="description"
+            placeholder="Descrição"
+          ></textarea>
+
+          <button type="submit" class="btn">Cadastrar</button>
+        </form>
+      </div>
+    </div>
     <!-- Produtos -->
     <section id="products">
-      <div class="container">
-        <div class="product-card">
-          <div class="product-image">FOTO DO ALIMENTO</div>
-          <div class="product-info">
-            <h3>Nome do Alimento</h3>
-            <p>R$5,00 (Valor do Alimento)</p>
-            <p>4.5 ⭐ (Nº de estrelas) - Alimentação</p>
-            <p>10-20 min - 1.3km</p>
-          </div>
-        </div>
-        <!-- Repetir a estrutura acima para outros produtos -->
+      <div class="container" id="products-container">
+        <!-- Produtos serão carregados dinamicamente aqui -->
       </div>
     </section>
 
@@ -75,5 +97,10 @@
         <p>&copy; 2024 HackFood - Todos os direitos reservados.</p>
       </div>
     </footer>
+
+    <!-- Scripts -->
+    <script type="module" src="../Assets/js/database.js"></script>
+    <script type="module" src="../Assets/js/products/products.js"></script>
+    <script type="module" src="../Assets/js/products/products-ui.js"></script>
   </body>
 </html>
