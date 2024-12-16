@@ -30,66 +30,87 @@
         <div class="user-info">
           <span>Endereço da pessoa</span>
           <div class="icons">
-            <i class="fa-solid fa-cart-shopping"></i>
             <i class="fa-solid fa-location-dot"></i>
-            <i class="fa-solid fa-user"></i>
-            <i class="fa-solid fa-heart"></i>
+            <div class="cart-icon-container">
+              <i
+                class="fa fa-shopping-cart"
+                id="open-cart"
+                title="Ver Carrinho"
+              ></i>
+              <span id="cart-count">0</span>
+            </div>
+            <i class="fa-solid fa-house"></i>
           </div>
         </div>
       </div>
     </header>
 
-    <section id="filters">
-      <div class="container">
-        <div class="search-bar">
-          <input type="text" placeholder="Buscar produtos..." />
+    <main>
+      <section id="filters">
+        <div class="container">
+          <div class="search-bar">
+            <input type="text" placeholder="Buscar produtos..." />
+          </div>
+          <button id="open-modal-btn" class="btn">Adicionar Produto</button>
         </div>
-        <button id="open-modal-btn" class="btn">Adicionar Produto</button>
+      </section>
+
+      <!-- Modal de cadastro de produtos -->
+      <div id="add-product-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-btn">&times;</span>
+          <h2>Cadastrar Produto</h2>
+          <form id="add-product-form">
+            <label for="name">Nome do Produto</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Nome do Produto"
+              required
+            />
+
+            <label for="price">Preço</label>
+            <input
+              type="number"
+              name="price"
+              id="price"
+              placeholder="Preço"
+              required
+              step="0.01"
+            />
+
+            <label for="description">Descrição</label>
+            <textarea
+              name="description"
+              id="description"
+              placeholder="Descrição"
+            ></textarea>
+
+            <button type="submit" class="btn">Cadastrar</button>
+          </form>
+        </div>
       </div>
-    </section>
 
-    <!-- Modal de cadastro de produtos -->
-    <div id="add-product-modal" class="modal">
-      <div class="modal-content">
-        <span class="close-btn">&times;</span>
-        <h2>Cadastrar Produto</h2>
-        <form id="add-product-form">
-          <label for="name">Nome do Produto</label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Nome do Produto"
-            required
-          />
-
-          <label for="price">Preço</label>
-          <input
-            type="number"
-            name="price"
-            id="price"
-            placeholder="Preço"
-            required
-            step="0.01"
-          />
-
-          <label for="description">Descrição</label>
-          <textarea
-            name="description"
-            id="description"
-            placeholder="Descrição"
-          ></textarea>
-
-          <button type="submit" class="btn">Cadastrar</button>
-        </form>
+      <!-- Modal do Carrinho -->
+      <div class="modal" id="cart-modal">
+        <div class="modal-content">
+          <span class="close-btn" id="close-cart">&times;</span>
+          <h2>Seu Carrinho</h2>
+          <div id="cart-items">
+            <!-- Os itens do carrinho aparecerão aqui -->
+          </div>
+          <button id="finalize-order" class="btn">Finalizar Pedido</button>
+        </div>
       </div>
-    </div>
-    <!-- Produtos -->
-    <section id="products">
-      <div class="container" id="products-container">
-        <!-- Produtos serão carregados dinamicamente aqui -->
-      </div>
-    </section>
+
+      <!-- Produtos -->
+      <section id="products">
+        <div class="container" id="products-container">
+          <!-- Produtos serão carregados dinamicamente aqui -->
+        </div>
+      </section>
+    </main>
 
     <!-- Footer -->
     <footer>
@@ -102,5 +123,6 @@
     <script type="module" src="../Assets/js/database.js"></script>
     <script type="module" src="../Assets/js/products/products.js"></script>
     <script type="module" src="../Assets/js/products/products-ui.js"></script>
+    <script type="module" src="../Assets/js/cart/cart.js"></script>
   </body>
 </html>

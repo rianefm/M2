@@ -14,6 +14,17 @@ body {
   line-height: 1.6;
 }
 
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+}
+
+.content {
+  flex: 1; 
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -76,7 +87,6 @@ button:hover {
   transform: translateY(-50%);
 }
 
-
 .modal-content h2 {
   margin-top: 0;
   font-size: 24px;
@@ -111,6 +121,88 @@ button:hover {
   background-color: #218838;
 }
 
+/* Modal do Carrinho */
+
+/* Ícone do Carrinho */
+.cart-icon-container {
+  position: fixed;
+  top: 20px;
+  right: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1001;
+  color: #333;
+}
+
+.cart-icon-container .fa-shopping-cart {
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+  color:#ffffff;
+}
+
+#cart-count {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  font-size: 0.9rem;
+  border-radius: 50%;
+  padding: 3px 7px;
+}
+#cart-modal {
+  display: none; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+}
+
+#cart-modal .modal-content {
+  position: relative;
+  background-color: #fff;
+  color: #333;
+  border-radius: 8px;
+  width: 60%;
+  max-height: 80%;
+  overflow-y: auto;
+  margin: 10% auto;
+  padding: 20px;
+}
+
+#cart-modal .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#cart-items {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+#cart-items div {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+#finalize-order {
+  margin-top: 20px;
+  background-color: #28a745;
+}
+
+#finalize-order:hover {
+  background-color: #218838;
+}
+
+
 /* Botão de fechar */
 .close-btn {
   position: absolute;
@@ -140,7 +232,7 @@ header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color:var(--color-primary);
+  background-color: var(--color-primary);
   color: white;
 }
 
@@ -155,29 +247,31 @@ header .logo h1 {
   color: white;
 }
 
-
 .search-bar {
-  position: relative; 
   display: flex;
-  align-items: center;
-  gap: 20px /* Espaço entre o input e o botão */
-}
-
-.search-bar i {
-  position: absolute; 
-  left: 10px; 
-  top: 50%; 
-  transform: translateY(-50%); 
-  color: #888; 
-  font-size: 16px; 
-  pointer-events: none; 
+  align-items: center; 
+  gap: 10px; 
 }
 
 .search-bar input {
-  padding-left: 45px; 
-  width: 600px;
+  flex-grow: 1; 
+  padding: 10px; 
   border: none;
   border-radius: 5px;
+}
+
+.search-bar button {
+  flex-shrink: 0; 
+}
+
+.search-bar i {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  font-size: 16px;
+  pointer-events: none;
 }
 
 
@@ -207,6 +301,7 @@ header .icons i {
   border-radius: var(--border-radius);
   transition: background-color var(--transition-fast);
   cursor: pointer;
+  margin-top: 15px;
 }
 
 #filters button:hover {
@@ -258,4 +353,62 @@ footer {
   padding: 20px;
   background-color: var(--color-primary);
   color: #fff;
+}
+
+/* Para telas grandes: Laptops e Desktops (acima de 1200px) */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1400px; /* Aumenta o limite para aproveitar mais espaço */
+  }
+}
+
+/* Para tablets e dispositivos médios (entre 768px e 1200px) */
+@media (max-width: 1200px) {
+  header .container, .search-bar, .user-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-bar {
+    width: 100%;
+  }
+
+  .search-bar input {
+    width: 100%;
+  }
+
+  #products .container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajusta o grid */
+  }
+}
+
+/* Para smartphones e telas pequenas (até 768px) */
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .search-bar {
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+  }
+
+  .search-bar input, .search-bar button {
+    width: 100%;
+  }
+
+  .product-card {
+    padding: 15px;
+  }
+
+  #products .container {
+    grid-template-columns: 1fr; 
+  }
+
+  footer {
+    font-size: 0.9rem; 
+  }
 }

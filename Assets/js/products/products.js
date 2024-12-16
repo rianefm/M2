@@ -23,6 +23,11 @@ export class Products {
     }
 
     async getProductById(id) {
+        const product = this.productsList.find((product) => product.id === id);
+        return Promise.resolve(product);
+    }
+
+    async getProductById(id) {
         if (!id) {
             throw new Error('Id é obrigatório para buscar um produto.');
         }
