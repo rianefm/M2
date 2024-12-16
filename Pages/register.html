@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="../Assets/css/register/register.css">
+
+    <script rel="stylesheet" src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+    <main>
+        <h1>Cadastro</h1>
+        <form id="register-form">
+            <label for="register-email"><i class="ph ph-envelope-simple"></i>
+                Email:
+            </label>
+            <input type="email" id="register-email" minlength="0" maxlength="37" title="Tamanho maximo: 37" placeholder="Digite seu email" required>
+
+            <label for="register-password"><i class="ph ph-key"></i>
+                Senha:
+            </label>
+            <input type="password" id="register-password" minlength="0" maxlength="28" placeholder="Digite sua senha" required title="Tamanho maximo: 28">
+
+            <label for="register-name"><i class="ph ph-at"></i>
+                 Nome (opcional):
+                </label>
+            <input type="text" maxlength="10" title="Tamanho maximo: 10" minlength="0" id="register-name" placeholder="Digite seu nome">
+
+            <button type="submit">Cadastrar</button>
+        </form>
+        <p>Já tem uma conta? <a href="login.html">Faça login aqui</a>.</p>
+    </main>
+    <script src="../Assets/js/app.js" type="module"></script>
+</body>
+
+</html>
