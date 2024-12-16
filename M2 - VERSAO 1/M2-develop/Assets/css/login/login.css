@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+}
+
+body{
+    background: linear-gradient(to right, #103601, #299107);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+
+.loginContainer{
+    background-color: #D9D9D9;
+    padding: 2rem;
+    border-radius: 44px;
+    width: 437px;
+    height: 365px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.loginContainer h2{
+    color: #49764B;
+    font-size: 25px;
+    margin-top: 30px;
+}
+
+.logo h1 {
+    font-size: 25px;
+    color: white;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+  }
+
+  .loginForm{
+    margin-top: 30px;
+  }
+
+
+  .loginForm label{
+    display: block;
+    text-align: left;
+    margin-bottom: 0.3rem;
+    margin-top: 0.3rem;
+  }
+
+ #labelPassword{
+    margin-top:25px;
+ }
+
+  .loginForm input{
+    width: 100%;
+    border-radius: 8px;
+    height: 24px;
+  }
+
+  #loginButton{
+    background:linear-gradient(to right, #B97C23, #FFC166);
+    height: 24px;
+    width: 124px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px;
+  }
+
+  #loginButton:hover{
+    background: linear-gradient(to right,  #c47806, #ffa620);
+  }
+
+  .actions{
+    margin-top: 0.7rem
+  }
+  
+  #registerButton{
+    margin-left: 5px;
+  }
+
+  #registerButton:hover{
+    background: linear-gradient(to right,  #c47806, #ffa620)
+  }
+
+  #forgotPassword:hover{
+    background: linear-gradient(to right,  #c47806, #ffa620)
+  }
+  .actions button{
+    color: #103601;
+    text-decoration: none;
+    width: 124px;
+    height: 24px;
+    background-color: #F0CA93;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+

@@ -1,0 +1,167 @@
+
+#Time{
+  color:white;
+  display: flex;
+  justify-content:center;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color:#1aaa07;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    margin-right:20px;
+    margin-left: 20px;
+}
+  
+@media (max-width: 600px) {
+  header {
+    text-align: center;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  
+  .container {
+    padding: 10px;
+  }
+
+  
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+  
+  .Riane {
+    display: flex;
+    align-items: center;
+    border: 1px solid #86ee78;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color:#86ee78;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  .Maria{
+    display: flex;
+    align-items: center;
+    border: 1px solid #86ee78;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #86ee78;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .Gisele{
+    display: flex;
+    align-items: center;
+    border: 1px solid #86ee78;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color:#86ee78;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .Hadiel{
+    display: flex;
+    align-items: center;
+    border: 1px solid #86ee78;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color:#86ee78;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .Thaun{
+    display: flex;
+    align-items: center;
+    border: 1px solid #86ee78;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color:#86ee78;
+     color:white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .Raí{
+    display: flex;
+    align-items: center;
+    border: 1px solid #86ee78;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color:#86ee78;
+    color:white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  .Jhon{
+    display: flex;
+    align-items: center;
+    border: 1px solid #86ee78;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color:#86ee78;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .foto {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+    object-fit: cover;
+  }
+  
+  .info h2 {
+    margin: 0;
+    font-size: 18px;
+    color:#031a01;
+  }
+  
+  .info p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+.container{
+  background-color: #1aaa07;
+  color: white;
+  height:100px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+
+.button{
+  width:100px;
+  height:35px;
+  background-color:#86ee78;;
+  color:#000;
+  border-radius:5px groove;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+  
+  
