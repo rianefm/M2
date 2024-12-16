@@ -1,0 +1,226 @@
+@import url(../global.css);
+@import url(../root.css);
+
+/* Header */
+header {
+  background-color: var(--bg-color-header);
+  color: var(--color-white);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-index-header);
+  box-shadow: var(--box-shadow);
+  padding: var(--spacing-sm) 0;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+header .logo img {
+  width: 50px;
+  height: auto;
+  border-radius: var(--border-radius-lg);
+}
+
+header .logo .brand-name {
+  font-size: var(--font-size-large);
+  font-weight: 600;
+  color: var(--color-white);
+}
+
+.header{
+  max-width: var(--container-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 15px;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: var(--spacing-lg);
+  align-items: center;
+  margin: 0;
+}
+
+header nav ul li a {
+  color: var(--color-white);
+  font-size: var(--font-size-large);
+  font-family: var(--font-family-secondary);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+header nav ul li a:hover {
+  color: var(--color-link-secondary);
+}
+
+header .login-link {
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--color-white);
+  color: var(--color-black);
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  transition: var(--transition-fast);
+}
+
+header .login-link a {
+  color: var(--color-black);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+header .login-link:hover {
+  background-color: var(--color-hover);
+  color: var(--color-white);
+  box-shadow: var(--box-shadow-hover);
+}
+
+header .login-link a:hover {
+  color: var(--color-white);
+}
+
+header .login-link i {
+  font-size: var(--font-size-large);
+}
+
+/* Estilo para o botão de logout */
+.logout-link {
+  color: var(--color-white);
+  font-size: var(--font-size-base);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.logout-link:hover {
+  color: var(--color-black);
+}
+
+/*=============== Responsividade ===============*/
+
+/* Para dispositivos maiores (desktops) */
+@media (min-width: 1010px) {
+  header .logo img {
+    width: 50px;
+  }
+
+  header nav ul li a {
+    font-size: var(--font-size-large);
+  }
+
+  header .login-link {
+    padding: var(--spacing-sm) var(--spacing-lg);
+  }
+}
+
+/* Para tablets (largura entre 768px e 1023px) */
+@media (max-width: 1023px) and (min-width: 768px) {
+  header .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  header nav ul {
+    gap: var(--spacing-md);
+  }
+
+  header .logo img {
+    width: 50px;
+  }
+
+  header nav ul li a {
+    font-size: var(--font-size-base);
+  }
+
+  header .login-link {
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-size: var(--font-size-small);
+  }
+}
+
+/* para tvs (largura maior que 1024px) */
+@media (min-width: 1024px) {
+  header .container {
+    padding: 0 var(--container-padding);
+  }
+
+  header nav ul li a {
+    font-size: var(--font-size-large);
+  }
+
+  header .login-link {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+}
+
+/* Estilo do botão hambúrguer */
+.hamburger {
+  display: none;
+  /* Somente para dispositivos móveis */
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: var(--spacing-md);
+  /* Alinhado à direita */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0;
+  /* Esconde texto (se houver) */
+  z-index: var(--z-index-header);
+}
+
+.hamburger i {
+  font-size: 32px;
+  /* Tamanho do ícone */
+  color: var(--color-white);
+  transition: var(--transition-fast);
+  /* Animação suave */
+}
+
+@media (max-width: 877px) {
+  .hamburger {
+    display: block;
+    padding: 2px;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .menu.active {
+    display: flex;
+    /* Mostra o menu quando ativo */
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 100%;
+    background-color: var(--bg-color-header);
+    box-shadow: var(--box-shadow);
+    z-index: var(--z-index-header);
+  }
+
+  .link-nav-li {
+    padding: 2px 20px;
+    transition: var(--transition-fast);
+    color: var(--color-white);
+  }
+
+    .link-nav-li:hover {
+      background-color: #ffffff3b;
+      padding: 2px 20px;
+      border-radius: 10px;
+      color: var(--color-link-secondary);
+    }
+}
