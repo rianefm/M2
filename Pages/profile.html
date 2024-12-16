@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Perfil</title>
+  <link rel="stylesheet" href="../Assets/css/profile/profile.css">
+
+  <script rel="stylesheet" src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+  <header>
+    <div class="header container">
+      <div class="logo">
+        <img src="../Assets/img/hackfood.webp" alt="Logo HackFood" />
+        <span class="brand-name">HackFood</span>
+      </div>
+      <nav>
+        <ul class="menu">
+          <li>
+            <a href="../index.html"><i class="ph ph-house"></i> Início</a>
+          </li>
+          <li>
+            <a href="./products.html"><i class="ph ph-package"></i> Produtos</a>
+          </li>
+          <li>
+            <a href="#" id="logout"><i class="ph ph-sign-out"></i> Sair</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>Bem-vindo, <span id="userName"></span>!</h1>
+
+    <section id="profile-info">
+      <h2>Informações do Perfil</h2>
+
+      <label for="email">Email:</label>
+      <input class="email-label" type="email" id="email" disabled="disabled">
+
+      <label for="name">Nome:</label>
+      <input type="text" id="name">
+
+      <label for="password">Senha:</label>
+      <input type="password" id="password">
+
+      <button id="update-profile">Atualizar Perfil</button>
+    </section>
+
+    <section id="user-orders">
+      <h2>Seus Pedidos</h2>
+      <div id="orders-list"></div>
+    </section>
+
+    <button id="logout">Sair</button>
+  </main>
+
+  <script type="module" src="../Assets/js/profile/profile.js" defer></script>
+  <script type="module" src="../Assets/js/app.js" defer></script>
+</body>
+
+</html>
